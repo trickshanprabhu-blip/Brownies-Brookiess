@@ -1395,11 +1395,10 @@ function submitOrder(event){
 
   const params = new URLSearchParams({
     name:     name,
-    village:  village,
+    city:     village,
     phone:    phone,
     email:    email,
-    product:  product,
-    quantity: String(quantity),
+    items:    product,
     total:    '₹'+total
   });
 
