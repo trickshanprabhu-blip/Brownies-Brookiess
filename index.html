@@ -1110,43 +1110,24 @@ animate();
       <label class="block font-label-md text-label-md text-on-surface-variant mb-1" for="orderName">Name</label>
       <input required class="w-full px-4 py-2.5 rounded-lg bg-surface-container border border-outline-variant/50 font-body-md text-body-md text-on-surface outline-none focus:border-secondary transition mb-3" id="orderName" name="name" placeholder="Your full name" type="text" autocomplete="name">
       <label class="block font-label-md text-label-md text-on-surface-variant mb-1" for="orderCity">Village or city</label>
-      <input required class="w-full px-4 py-2.5 rounded-lg bg-surface-container border border-outline-variant/50 font-body-md text-body-md text-on-surface outline-none focus:border-secondary transition mb-3" id="orderCity" name="city" placeholder="Village or city name" type="text" autocomplete="address-level2">
+      <input required class="w-full px-4 py-2.5 rounded-lg bg-surface-container border border-outline-variant/50 font-body-md text-body-md text-on-surface outline-none focus:border-secondary transition mb-3" id="orderCity" name="village" placeholder="Village or city name" type="text" autocomplete="address-level2">
       <label class="block font-label-md text-label-md text-on-surface-variant mb-1" for="orderPhone">Phone number</label>
       <input required class="w-full px-4 py-2.5 rounded-lg bg-surface-container border border-outline-variant/50 font-body-md text-body-md text-on-surface outline-none focus:border-secondary transition mb-3" id="orderPhone" name="phone" placeholder="10-digit mobile number" type="tel" inputmode="tel" autocomplete="tel" pattern="[0-9+\s-]{10,15}">
       <label class="block font-label-md text-label-md text-on-surface-variant mb-1" for="orderEmail">Email</label>
       <input required class="w-full px-4 py-2.5 rounded-lg bg-surface-container border border-outline-variant/50 font-body-md text-body-md text-on-surface outline-none focus:border-secondary transition mb-5" id="orderEmail" name="email" placeholder="you@email.com" type="email" autocomplete="email">
       <p id="checkoutError" class="font-body-sm text-body-sm text-error mt-0 mb-3 text-center hidden"></p>
+      <p id="checkoutSuccess" class="font-body-sm text-body-sm text-secondary mt-0 mb-3 text-center hidden"></p>
       <button class="w-full py-3.5 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg hover:bg-tertiary transition-all shadow-md flex items-center justify-center gap-2" id="placeOrderBtn" type="submit">
-        <span class="material-symbols-outlined text-[18px]">check_circle</span> Save to Google Sheet
+        <span class="material-symbols-outlined text-[18px]">check_circle</span> Place Order
       </button>
-      <div class="mt-4 pt-4 border-t border-outline-variant/30" id="sheetConnectBox">
-        <p class="font-label-md text-label-md text-primary mb-2">Do this once so names go into the sheet</p>
-        <ol class="font-body-sm text-body-sm text-on-surface-variant mb-3 pl-4 list-decimal space-y-1">
-          <li>Click Copy script, then open the Google Sheet</li>
-          <li>Extensions → Apps Script → paste → Save</li>
-          <li>Deploy → New deployment → Web app → Execute as Me → Anyone → Deploy</li>
-          <li>Copy the URL and paste it below</li>
-        </ol>
-        <div class="flex gap-2 mb-2">
-          <button class="flex-1 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md" type="button" onclick="copySheetScript()">Copy script</button>
-          <a class="flex-1 py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md text-center" href="https://docs.google.com/spreadsheets/d/1OIcfFUSImMuMg-iUxe_sXR9xygVeRkF7RKrSfJntCKA/edit" target="_blank" rel="noopener">Open sheet</a>
-        </div>
-        <input class="w-full px-3 py-2 rounded-lg bg-surface-container border border-outline-variant/50 font-body-sm text-body-sm text-on-surface outline-none focus:border-secondary mb-2" id="orderScriptUrl" placeholder="https://script.google.com/macros/s/…/exec" type="url">
-        <button class="w-full py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md" type="button" onclick="saveOrderScriptUrl()">Save connection</button>
-        <p class="font-body-sm text-body-sm text-secondary mt-2 hidden" id="sheetConnectOk">Connected. Type a name and tap Save to Google Sheet.</p>
-      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant text-center mt-4">
+        <span class="material-symbols-outlined text-[13px] align-middle">lock</span>
+        Your order is securely saved to our Google Sheet.
+      </p>
     </form>
   </div>
 </div>
-<iframe name="sheetFrame" id="sheetFrame" title="sheet" style="display:none;width:0;height:0;border:0;"></iframe>
-<form id="sheetPostForm" method="POST" target="sheetFrame" style="display:none;">
-  <input name="name">
-  <input name="city">
-  <input name="phone">
-  <input name="email">
-  <input name="items">
-  <input name="total">
-</form>
+<!-- Google Sheets integration is handled via fetch() in submitOrder() -->
 
 <!-- ═══════ LOGIN / REGISTER MODAL ═══════ -->
 <div id="loginModal" class="fixed inset-0 z-[100] flex items-center justify-center px-4 hidden" onclick="if(event.target===this)closeLogin()">
@@ -1218,57 +1199,13 @@ const PRODUCTS = [
 ];
 let cart = [];       // [{name, price, qty}]
 let currentUser = JSON.parse(localStorage.getItem('bb_user') || 'null');
-// After deploying Code.gs as a Google Apps Script web app, paste the URL here:
-const ORDER_WEBAPP_URL = '';
+// Google Apps Script Web App endpoint (deployed, public)
+const ORDER_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyY3YSjR3ddniVrK0nvTYf5B4dWgwbeHq0Cm_7edDX9nN4zqoW3iy8DTMOoPA6zOoEzew/exec';
 const ORDER_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1OIcfFUSImMuMg-iUxe_sXR9xygVeRkF7RKrSfJntCKA/edit';
-const ORDER_NOTIFY_EMAIL = 'browniesbrookiess@gmail.com';
-const APPS_SCRIPT_CODE = `var SHEET_ID='1OIcfFUSImMuMg-iUxe_sXR9xygVeRkF7RKrSfJntCKA';
-var SHEET_URL='https://docs.google.com/spreadsheets/d/1OIcfFUSImMuMg-iUxe_sXR9xygVeRkF7RKrSfJntCKA/edit';
-var NOTIFY_EMAIL='browniesbrookiess@gmail.com';
-function doGet(e){return handle_(e);}
-function doPost(e){return handle_(e);}
-function handle_(e){
-  try{
-    var d=(e&&e.parameter)?e.parameter:{};
-    if(!d.name){return ContentService.createTextOutput('{"ok":false}');}
-    var sheet=SpreadsheetApp.openById(SHEET_ID).getSheets()[0];
-    if(sheet.getLastRow()===0){sheet.appendRow(['Timestamp','Name','Village / City','Phone','Email','Items','Total','Status']);}
-    sheet.appendRow([new Date(), d.name, d.city||'', d.phone||'', d.email||'', d.items||'', d.total||'', 'New']);
-    try{MailApp.sendEmail(NOTIFY_EMAIL,'New order — '+d.name,'Name: '+d.name+'\\nVillage / city: '+(d.city||'')+'\\nPhone: '+(d.phone||'')+'\\nEmail: '+(d.email||'')+'\\nItems: '+(d.items||'')+'\\nTotal: '+(d.total||'')+'\\n\\n'+SHEET_URL);}catch(err){}
-    return ContentService.createTextOutput('{"ok":true}').setMimeType(ContentService.MimeType.JSON);
-  }catch(err){return ContentService.createTextOutput(JSON.stringify({ok:false,error:String(err)}));}
-}`;
 function getOrderScriptUrl(){
-  return (ORDER_WEBAPP_URL || localStorage.getItem('bb_order_script') || '').trim();
+  return ORDER_WEBAPP_URL;
 }
-function copySheetScript(){
-  navigator.clipboard.writeText(APPS_SCRIPT_CODE).then(function(){
-    alert('Script copied. Open the Google Sheet → Extensions → Apps Script → paste → Save.');
-    window.open(ORDER_SHEET_URL, '_blank');
-  }).catch(function(){
-    prompt('Copy this script:', APPS_SCRIPT_CODE);
-  });
-}
-function saveOrderScriptUrl(){
-  const input = document.getElementById('orderScriptUrl');
-  const ok = document.getElementById('sheetConnectOk');
-  const url = (input && input.value || '').trim();
-  if(!url || url.indexOf('script.google.com') === -1){
-    alert('Paste the Web app URL from Deploy (it must contain script.google.com and end with /exec).');
-    return;
-  }
-  localStorage.setItem('bb_order_script', url);
-  if(ok) ok.classList.remove('hidden');
-  const box = document.getElementById('sheetConnectBox');
-  if(box) setTimeout(function(){ box.classList.add('hidden'); }, 800);
-}
-function syncSheetConnectBox(){
-  const input = document.getElementById('orderScriptUrl');
-  const box = document.getElementById('sheetConnectBox');
-  const url = getOrderScriptUrl();
-  if(input && url) input.value = url;
-  if(box && url) box.classList.add('hidden');
-}
+function syncSheetConnectBox(){ /* no-op: URL is hardcoded */ }
 
 function toggleMobileNav() {
   const nav = document.getElementById('mobileNav');
@@ -1429,72 +1366,82 @@ function closeCheckout(){
   const modal = document.getElementById('checkoutModal');
   if(modal) modal.classList.add('hidden');
 }
-function finishOrderSuccess(name){
-  closeCheckout();
-  const form = document.getElementById('checkoutForm');
-  if(form) form.reset();
-  clearCart();
-  window.open(ORDER_SHEET_URL, '_blank');
-  alert('Saved. Your Google Sheet is opening — look for "'+name+'" in the Name column.');
-}
-function sendOrderToSheet(data){
-  const url = getOrderScriptUrl();
-  if(!url) return false;
-  const form = document.getElementById('sheetPostForm');
-  if(form){
-    form.action = url;
-    form.name.value = data.name;
-    form.city.value = data.city;
-    form.phone.value = data.phone;
-    form.email.value = data.email;
-    form.items.value = data.items;
-    form.total.value = data.total;
-    form.submit();
-  }
-  const ping = url + (url.indexOf('?') === -1 ? '?' : '&') + new URLSearchParams(data).toString();
-  const img = new Image();
-  img.src = ping;
-  return true;
-}
 function submitOrder(event){
   event.preventDefault();
-  const errEl = document.getElementById('checkoutError');
-  const btn = document.getElementById('placeOrderBtn');
-  const name = document.getElementById('orderName').value.trim();
-  const city = document.getElementById('orderCity').value.trim();
-  const phone = document.getElementById('orderPhone').value.trim();
-  const email = document.getElementById('orderEmail').value.trim();
-  if(!name || !city || !phone || !email){
-    errEl.textContent = 'Please fill in all details.';
-    errEl.classList.remove('hidden');
-    return;
-  }
-  if(!getOrderScriptUrl()){
-    errEl.textContent = 'Connect the Google Sheet first (steps below), then save again.';
-    errEl.classList.remove('hidden');
-    const box = document.getElementById('sheetConnectBox');
-    if(box) box.classList.remove('hidden');
-    return;
-  }
-  const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
-  const items = cart.map(i=>i.name+' × '+i.qty+' (₹'+i.price*i.qty+')').join('; ');
-  const data = {
-    name: name,
-    city: city,
-    phone: phone,
-    email: email,
-    items: items,
-    total: '₹'+total
-  };
+  const errEl     = document.getElementById('checkoutError');
+  const successEl = document.getElementById('checkoutSuccess');
+  const btn       = document.getElementById('placeOrderBtn');
+
+  // Hide previous messages
   errEl.classList.add('hidden');
+  successEl.classList.add('hidden');
+
+  // Gather & validate fields
+  const name    = document.getElementById('orderName').value.trim();
+  const village = document.getElementById('orderCity').value.trim();
+  const phone   = document.getElementById('orderPhone').value.trim();
+  const email   = document.getElementById('orderEmail').value.trim();
+
+  if(!name || !village || !phone || !email){
+    errEl.textContent = 'Please fill in all required details.';
+    errEl.classList.remove('hidden');
+    return;
+  }
+
+  // Build order payload matching Apps Script parameter names
+  const total    = cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const product  = cart.map(i=>i.name+' × '+i.qty).join('; ');
+  const quantity = cart.reduce((s,i)=>s+i.qty,0);
+
+  const params = new URLSearchParams({
+    name:     name,
+    village:  village,
+    phone:    phone,
+    email:    email,
+    product:  product,
+    quantity: String(quantity),
+    total:    '₹'+total
+  });
+
+  const url = getOrderScriptUrl();
+
+  // Show loading state
+  const origHTML = btn.innerHTML;
   btn.disabled = true;
-  btn.innerHTML = 'Saving to Google Sheet…';
-  sendOrderToSheet(data);
-  setTimeout(function(){
-    btn.disabled = false;
-    btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span> Save to Google Sheet';
-    finishOrderSuccess(name);
-  }, 1200);
+  btn.innerHTML =
+    '<span class="material-symbols-outlined text-[18px] animate-spin" style="animation:spin 1s linear infinite">progress_activity</span>'
+    +' Saving…';
+
+  // Inject spin keyframe once
+  if(!document.getElementById('bb-spin-style')){
+    const s = document.createElement('style');
+    s.id = 'bb-spin-style';
+    s.textContent = '@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}';
+    document.head.appendChild(s);
+  }
+
+  // Submit via fetch (no-cors because Apps Script returns opaque response on GET)
+  fetch(url+'?'+params.toString(), { method:'GET', mode:'no-cors' })
+    .then(function(){
+      // no-cors gives opaque response; treat reaching .then() as success
+      btn.disabled = false;
+      btn.innerHTML = origHTML;
+      successEl.textContent = '✓ Order saved! We’ll bake it fresh for you, '+name+'.';
+      successEl.classList.remove('hidden');
+      // Reset & close after short delay so user sees the message
+      setTimeout(function(){
+        closeCheckout();
+        document.getElementById('checkoutForm').reset();
+        clearCart();
+      }, 2200);
+    })
+    .catch(function(err){
+      btn.disabled = false;
+      btn.innerHTML = origHTML;
+      errEl.textContent = 'Could not reach the server. Please check your connection and try again.';
+      errEl.classList.remove('hidden');
+      console.error('[B&B order]', err);
+    });
 }
 
 // Override the menu section addToTastingBox to sync cart
