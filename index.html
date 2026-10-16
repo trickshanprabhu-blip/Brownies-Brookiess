@@ -1142,7 +1142,7 @@ let PRODUCTS = getMenuItems().map(m=>({name:m.name,category:m.category,price:m.p
 let cart = [];       // [{name, price, qty}]
 let currentUser = JSON.parse(localStorage.getItem('bb_user') || 'null');
 // Google Apps Script Web App endpoint (deployed, public)
-const ORDER_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyY3YSjR3ddniVrK0nvTYf5B4dWgwbeHq0Cm_7edDX9nN4zqoW3iy8DTMOoPA6zOoEzew/exec';
+const ORDER_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyxgXITgef938_pirDgxJpOeyXjAKH_GRhb00FlAyOzpA5XEorvAlIKCUW2sqWQ_ivE/exec';
 const ORDER_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1OIcfFUSImMuMg-iUxe_sXR9xygVeRkF7RKrSfJntCKA/edit';
 function getOrderScriptUrl(){
   return ORDER_WEBAPP_URL;
