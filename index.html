@@ -667,227 +667,7 @@ animate();
   <!-- Product Grid -->
   <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop py-6 pb-28">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-gutter-desktop" id="productGrid">
-
-      <!-- Card 1: The Original Sea Salt -->
-      <article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(42,27,20,0.05)] hover:shadow-[0_12px_32px_rgba(42,27,20,0.12)] transition-all duration-300" data-category="brookies">
-        <div class="relative w-full aspect-[4/3] bg-surface-container-high overflow-hidden flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent z-10 pointer-events-none"></div>
-          <span class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-wider shadow-sm font-semibold">Best Seller</span>
-          <span class="absolute top-4 right-4 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md text-secondary font-label-sm text-label-sm font-bold">
-            <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1">star</span> 4.9
-          </span>
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAChJOxNffiFexFP3Z6MlxPkIsc-0USOMTfuXDUfx5wXSnPHKy7qVbe0hOZ2j7OWv5BKs9zPfx7OZvFKrR1hOuKGbzn1BiWFO-eGUrsx2MP1bJrPB7e65O2HvS9Tw5aSpmdeHk3zq-8pSF4YALcUjDaRkq1R9EaAvH-8PWhLnz9b-sk-WpiHLnWfmFINkTgS22CldUK0mZCmTzfAHWZNHqlvOtT4nfdutAFEPIShsvW00li4LYbrKSXfA" alt="Original Sea Salt Brookie">
-        </div>
-        <div class="p-5 flex flex-col flex-1 justify-between bg-surface-container-lowest">
-          <div>
-            <div class="flex items-center justify-between mb-1.5">
-              <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Brookies</span>
-              <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-outline">timer</span> Baked 8am</span>
-            </div>
-            <h3 class="font-headline-sm text-headline-sm text-primary tracking-tight leading-snug mb-2 group-hover:text-secondary transition-colors">The Original Sea Salt</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed mb-4">Fudgy brownie base topped with golden cookie dough and flaky hand-harvested Maldon sea salt crystals.</p>
-            <div class="flex flex-wrap gap-1.5 mb-4">
-              <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[11px]">Normandy Butter</span>
-              <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[11px]">70% Valrhona</span>
-            </div>
-          </div>
-          <div class="pt-3 flex items-center justify-between">
-            <div><span class="font-label-sm text-label-sm text-outline uppercase block">Piece</span><span class="font-headline-sm text-[26px] text-primary font-normal">&#8377;180</span></div>
-            <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary hover:bg-tertiary text-on-primary font-label-md text-label-md transition-all shadow-sm active:scale-95" onclick="addToTastingBox('The Original Sea Salt', 180, this)">
-              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> <span>Add</span>
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 2: Double Chocolate -->
-      <article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(42,27,20,0.05)] hover:shadow-[0_12px_32px_rgba(42,27,20,0.12)] transition-all duration-300" data-category="brookies">
-        <div class="relative w-full aspect-[4/3] bg-surface-container-high overflow-hidden flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent z-10 pointer-events-none"></div>
-          <span class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wider shadow-sm font-semibold">Fan Fav</span>
-          <span class="absolute top-4 right-4 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md text-secondary font-label-sm text-label-sm font-bold">
-            <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1">star</span> 4.8
-          </span>
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEMTjTZU8Cq325TeaFGyesBopAUdDbFzKdOCpsBFIeJkt-tXsNmFYAPFx1nCnH3B61c6AIvPnZauEF16ePN4C8hkcIyNOzLW4g5jLVCxKZVikoONQTY9PqR2TyZI0CmaRxHSZSl0oHQ9-d5hgLz0KLCQ-oFwQgQ_AlPi--fUfBN5jqsS6f1O4ylWZWdGbeZ0Z3RlF2GhxsVOM3W9o0sdyA00YGFHeB1lkLmZyhnI8LyflOvMjGfTCEzg" alt="Double Chocolate Brookie">
-        </div>
-        <div class="p-5 flex flex-col flex-1 justify-between bg-surface-container-lowest">
-          <div>
-            <div class="flex items-center justify-between mb-1.5">
-              <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Brookies</span>
-              <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-outline">nest_eco_leaf</span> Organic Egg</span>
-            </div>
-            <h3 class="font-headline-sm text-headline-sm text-primary tracking-tight leading-snug mb-2 group-hover:text-secondary transition-colors">Double Chocolate</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed mb-4">Rich dark cocoa brownie meets generous double chocolate chip golden cookie layer with molten core.</p>
-            <div class="flex flex-wrap gap-1.5 mb-4">
-              <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[11px]">Callebaut Noir</span>
-              <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[11px]">Brown Sugar</span>
-            </div>
-          </div>
-          <div class="pt-3 flex items-center justify-between">
-            <div><span class="font-label-sm text-label-sm text-outline uppercase block">Piece</span><span class="font-headline-sm text-[26px] text-primary font-normal">&#8377;200</span></div>
-            <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary hover:bg-tertiary text-on-primary font-label-md text-label-md transition-all shadow-sm active:scale-95" onclick="addToTastingBox('Double Chocolate', 200, this)">
-              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> <span>Add</span>
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 3: Nutella Swirl -->
-      <article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(42,27,20,0.05)] hover:shadow-[0_12px_32px_rgba(42,27,20,0.12)] transition-all duration-300" data-category="brookies">
-        <div class="relative w-full aspect-[4/3] bg-surface-container-high overflow-hidden flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent z-10 pointer-events-none"></div>
-          <span class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-wider shadow-sm font-semibold">New</span>
-          <span class="absolute top-4 right-4 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md text-secondary font-label-sm text-label-sm font-bold">
-            <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1">star</span> 5.0
-          </span>
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDlCAnmT_wPmKwepeBtIAcaQA_j7zYLMQ-Y_MChs-d_cm23dnONRdpt5T9OW7_SyHKM3u50aTpnrqh_yLH0r-fInHo9-Vabhnmuhc1TdPKWbUcG2WshEb4IrO_t3yHqpzWHZxLtute_cyZ4UUpg_Wl-PEloaJCrklhSxjw-Xc6YzZyljBKQOtqxL7dVzNZQKsuTuoYRmYri9fL7yQJY7Qy1ARLJJLVJaR7zErX0jfGNOA4Dio4cq8EPw" alt="Nutella Swirl Brookie">
-        </div>
-        <div class="p-5 flex flex-col flex-1 justify-between bg-surface-container-lowest">
-          <div>
-            <div class="flex items-center justify-between mb-1.5">
-              <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Brookies</span>
-              <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-secondary">local_fire_department</span> Hot Drop</span>
-            </div>
-            <h3 class="font-headline-sm text-headline-sm text-primary tracking-tight leading-snug mb-2 group-hover:text-secondary transition-colors">Nutella Swirl</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed mb-4">Roasted Piedmont hazelnut-cocoa swirl ribboned through a classic brookie with gooey molten pocket.</p>
-            <div class="flex flex-wrap gap-1.5 mb-4">
-              <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[11px]">Roasted Hazelnuts</span>
-              <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[11px]">Molten Core</span>
-            </div>
-          </div>
-          <div class="pt-3 flex items-center justify-between">
-            <div><span class="font-label-sm text-label-sm text-outline uppercase block">Piece</span><span class="font-headline-sm text-[26px] text-primary font-normal">&#8377;220</span></div>
-            <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary hover:bg-tertiary text-on-primary font-label-md text-label-md transition-all shadow-sm active:scale-95" onclick="addToTastingBox('Nutella Swirl', 220, this)">
-              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> <span>Add</span>
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 4: White Choc Raspberry -->
-      <article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(42,27,20,0.05)] hover:shadow-[0_12px_32px_rgba(42,27,20,0.12)] transition-all duration-300" data-category="brookies">
-        <div class="relative w-full aspect-[4/3] bg-surface-container-high overflow-hidden flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent z-10 pointer-events-none"></div>
-          <span class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wider shadow-sm font-semibold">Chef Special</span>
-          <span class="absolute top-4 right-4 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md text-secondary font-label-sm text-label-sm font-bold">
-            <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1">star</span> 4.9
-          </span>
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_4VjpfFXy0EgUUDSF0aRLJ44VfAYtKBJ45QDHVMulm2n_QWj8T0jwsrC1UxwJ32AWVihk2sS0uZW0iJaMaalpSdikqHvQ65DGB1Hh2ZG61xEdy1v1Mr8JZSllNOIZUb_0uqG1keuAhKuALRzmKaIVg_FcVmDJ0ZM0C2qbWzBxltewlDORhiYZ14xSgdMlJgq7UTsz-1EURNOdy0LM1QPxwVmgxrPq_bqMqGegtunGUIYBnBsDSvzLIg" alt="White Choc Raspberry Brookie">
-        </div>
-        <div class="p-5 flex flex-col flex-1 justify-between bg-surface-container-lowest">
-          <div>
-            <div class="flex items-center justify-between mb-1.5">
-              <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Brookies</span>
-            </div>
-            <h3 class="font-headline-sm text-headline-sm text-primary tracking-tight leading-snug mb-2 group-hover:text-secondary transition-colors">White Choc Raspberry</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed mb-4">Tart wild raspberry compote ripples contrasting with creamy caramelized Swiss white chocolate.</p>
-            <div class="flex flex-wrap gap-1.5 mb-4">
-              <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[11px]">Wild Raspberry</span>
-              <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[11px]">White Choc</span>
-            </div>
-          </div>
-          <div class="pt-3 flex items-center justify-between">
-            <div><span class="font-label-sm text-label-sm text-outline uppercase block">Piece</span><span class="font-headline-sm text-[26px] text-primary font-normal">&#8377;210</span></div>
-            <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary hover:bg-tertiary text-on-primary font-label-md text-label-md transition-all shadow-sm active:scale-95" onclick="addToTastingBox('White Choc Raspberry', 210, this)">
-              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> <span>Add</span>
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 5: Espresso Fudge Slab -->
-      <article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(42,27,20,0.05)] hover:shadow-[0_12px_32px_rgba(42,27,20,0.12)] transition-all duration-300" data-category="brownies">
-        <div class="relative w-full aspect-[4/3] bg-surface-container-high overflow-hidden flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent z-10 pointer-events-none"></div>
-          <span class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-label-sm uppercase tracking-wider shadow-sm font-semibold">Signature</span>
-          <span class="absolute top-4 right-4 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md text-secondary font-label-sm text-label-sm font-bold">
-            <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1">star</span> 4.9
-          </span>
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_rNBCWIt4gF6_YvTzwtvaeZZQLUd4TuOzKgsxQIBuU1cK3Ux9BlDrUN04dX52QEZV-wez2yRghhNt09iA1HCm8Cp6Q4g83oCQ6_Fa0MV2KJMnB9VoqLej5u7rR7LJNCUWb5k8wTEHvWLqZBD6i3jhL11Rq9v4Y4xJhXO0fvMwq9GIUFO2EIhY_ZACzVi4FuVsZXYLLENVNzywXZUANUaUqSYZek3CboFCi1kMptR0IzlsZh5l1ZhybA" alt="Espresso Fudge Brownie">
-        </div>
-        <div class="p-5 flex flex-col flex-1 justify-between bg-surface-container-lowest">
-          <div>
-            <div class="flex items-center justify-between mb-1.5">
-              <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Brownies</span>
-            </div>
-            <h3 class="font-headline-sm text-headline-sm text-primary tracking-tight leading-snug mb-2 group-hover:text-secondary transition-colors">Espresso Fudge Slab</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed mb-4">Bloomed dark roast Arabica espresso deeply infused in 72% Belgian dark chocolate fudge base.</p>
-            <div class="flex flex-wrap gap-1.5 mb-4">
-              <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[11px]">Dark Roast Arabica</span>
-              <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[11px]">72% Belgian</span>
-            </div>
-          </div>
-          <div class="pt-3 flex items-center justify-between">
-            <div><span class="font-label-sm text-label-sm text-outline uppercase block">Piece</span><span class="font-headline-sm text-[26px] text-primary font-normal">&#8377;190</span></div>
-            <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary hover:bg-tertiary text-on-primary font-label-md text-label-md transition-all shadow-sm active:scale-95" onclick="addToTastingBox('Espresso Fudge Slab', 190, this)">
-              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> <span>Add</span>
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 6: Caramel Pecan Crunch -->
-      <article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(42,27,20,0.05)] hover:shadow-[0_12px_32px_rgba(42,27,20,0.12)] transition-all duration-300" data-category="cookies">
-        <div class="relative w-full aspect-[4/3] bg-surface-container-high overflow-hidden flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent z-10 pointer-events-none"></div>
-          <span class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-wider shadow-sm font-semibold">Seasonal</span>
-          <span class="absolute top-4 right-4 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md text-secondary font-label-sm text-label-sm font-bold">
-            <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1">star</span> 4.7
-          </span>
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi92T5iYZWSYKG6MihkrS5t4cQfG-_UuhWVaGw-NtuXGOoFVnoDgAUhqs8VQbbhtHP_bNYGYm7FTdOkoeM7PvOpkNSGB1a_ZKxzoM7LoxAcz6XXEHkvTEQR7zGHrFrAmAJ9KRMzOG9D4YOUhjIyKxovzTHmGLvubObzQSSlYMgTb2pi25GTlqRVerR4TRQpenJHVsg3p9KQQkjj9BghiXFr32WdCD-nQL3wX3NTkyS_DmwhaSiCSWNYg" alt="Caramel Pecan Crunch Cookie">
-        </div>
-        <div class="p-5 flex flex-col flex-1 justify-between bg-surface-container-lowest">
-          <div>
-            <div class="flex items-center justify-between mb-1.5">
-              <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Cookies</span>
-            </div>
-            <h3 class="font-headline-sm text-headline-sm text-primary tracking-tight leading-snug mb-2 group-hover:text-secondary transition-colors">Caramel Pecan Crunch</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed mb-4">Slow-toasted butter pecans folded into browned butter cookie dough with gooey salted toffee rivers.</p>
-            <div class="flex flex-wrap gap-1.5 mb-4">
-              <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[11px]">Butter Pecans</span>
-              <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[11px]">Salted Toffee</span>
-            </div>
-          </div>
-          <div class="pt-3 flex items-center justify-between">
-            <div><span class="font-label-sm text-label-sm text-outline uppercase block">Piece</span><span class="font-headline-sm text-[26px] text-primary font-normal">&#8377;230</span></div>
-            <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary hover:bg-tertiary text-on-primary font-label-md text-label-md transition-all shadow-sm active:scale-95" onclick="addToTastingBox('Caramel Pecan Crunch', 230, this)">
-              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> <span>Add</span>
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 7: Sicilian Pistachio Fudge -->
-      <article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(42,27,20,0.05)] hover:shadow-[0_12px_32px_rgba(42,27,20,0.12)] transition-all duration-300" data-category="brownies">
-        <div class="relative w-full aspect-[4/3] bg-surface-container-high overflow-hidden flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent z-10 pointer-events-none"></div>
-          <span class="absolute top-4 right-4 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md text-secondary font-label-sm text-label-sm font-bold">
-            <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1">star</span> 4.9
-          </span>
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRt9CYvL-2ZucA-mA4lnpOz3yUB3NhIw0Mc7KCtmbXwHnx-dTVaDbhQnSR4rC0sErJMxzvd1jNcA9byqM_wabTkLcSfMvPym_YRs9x8tO3PyZ39UHnZDJDQyHRq_pT8sKPiU4dkS5xS0ahxoRDHQwGQ-jVYIhOu3Gq2BqBmt00LjTkvyBlwcUCu4-rphyDqca87OkzauGQxbQ4yyYOD7HCTbJdT7ky-OJ5BCQO8B_vB_9n6viO14Y8Lg" alt="Sicilian Pistachio Fudge Brownie">
-        </div>
-        <div class="p-5 flex flex-col flex-1 justify-between bg-surface-container-lowest">
-          <div>
-            <div class="flex items-center justify-between mb-1.5">
-              <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Brownies</span>
-              <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-outline">workspace_premium</span> Pure Sicilian</span>
-            </div>
-            <h3 class="font-headline-sm text-headline-sm text-primary tracking-tight leading-snug mb-2 group-hover:text-secondary transition-colors">Sicilian Pistachio Fudge</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed mb-4">Stone-ground Bronte pistachio cream swirled through a dark cacao truffle base with toasted nut topping.</p>
-            <div class="flex flex-wrap gap-1.5 mb-4">
-              <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[11px]">Bronte Pistachio</span>
-              <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[11px]">Dark Cacao</span>
-            </div>
-          </div>
-          <div class="pt-3 flex items-center justify-between">
-            <div><span class="font-label-sm text-label-sm text-outline uppercase block">Piece</span><span class="font-headline-sm text-[26px] text-primary font-normal">&#8377;240</span></div>
-            <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary hover:bg-tertiary text-on-primary font-label-md text-label-md transition-all shadow-sm active:scale-95" onclick="addToTastingBox('Sicilian Pistachio Fudge', 240, this)">
-              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> <span>Add</span>
-            </button>
-          </div>
-        </div>
-      </article>
-
+      <!-- Cards rendered dynamically by renderMenuGrid() -->
     </div>
   </div>
 
@@ -1185,18 +965,149 @@ animate();
   </div>
 </div>
 
+<!-- ═══════ ADMIN PANEL MODAL (Secret — access via brownies@gmail.com / kiwii) ═══════ -->
+<div id="adminModal" class="fixed inset-0 z-[200] hidden" style="background:rgba(10,6,4,0.92);backdrop-filter:blur(12px)">
+  <div class="h-full overflow-y-auto">
+    <div class="max-w-2xl mx-auto px-4 py-8 pb-20">
+
+      <!-- Header -->
+      <div class="flex items-center justify-between mb-8">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#fead4f,#895200)">
+            <span class="material-symbols-outlined text-white text-[20px]" style="font-variation-settings:'FILL' 1">admin_panel_settings</span>
+          </div>
+          <div>
+            <p class="font-headline-sm text-[20px] font-semibold" style="color:#ffecd6">Admin Panel</p>
+            <p class="font-label-sm text-label-sm" style="color:#b09070">Brownies &amp; Brookiess — Menu Editor</p>
+          </div>
+        </div>
+        <button onclick="closeAdminPanel()" class="flex items-center gap-2 px-4 py-2 rounded-xl font-label-md transition-all" style="background:rgba(255,255,255,0.07);color:#b09070" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">
+          <span class="material-symbols-outlined text-[18px]">close</span> Close
+        </button>
+      </div>
+
+      <!-- Current Menu Items List -->
+      <div class="rounded-2xl p-5 mb-8" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
+        <div class="flex items-center justify-between mb-4">
+          <p class="font-label-lg text-label-lg uppercase tracking-wider" style="color:#ffecd6">Current Menu</p>
+          <span class="font-label-sm text-label-sm px-3 py-1 rounded-full" style="background:rgba(254,173,79,0.15);color:#fead4f">Live on site</span>
+        </div>
+        <div id="adminItemList">
+          <!-- populated by renderAdminList() -->
+        </div>
+      </div>
+
+      <!-- Add / Edit Form -->
+      <div id="adminForm" class="rounded-2xl p-6" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
+        <p id="adminFormTitle" class="font-headline-sm text-[18px] font-semibold mb-5" style="color:#ffecd6">Add New Item</p>
+
+        <!-- Image URL + Preview -->
+        <label class="block font-label-md text-label-md mb-1" style="color:#b09070">Image URL</label>
+        <div class="flex gap-2 mb-3">
+          <input id="aImage" type="url" placeholder="https://…" oninput="adminPreviewImage()"
+            class="flex-1 px-4 py-2.5 rounded-xl font-body-md text-body-md outline-none transition"
+            style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:#ffecd6">
+        </div>
+        <div class="mb-4 rounded-xl overflow-hidden" style="max-height:180px">
+          <img id="aImagePreview" src="" alt="Preview" class="w-full object-cover" style="display:block;max-height:180px" onerror="this.style.display='none'" onload="this.style.display='block'">
+        </div>
+
+        <!-- Name -->
+        <label class="block font-label-md text-label-md mb-1" style="color:#b09070">Item Name *</label>
+        <input id="aName" type="text" placeholder="e.g. Caramel Sea Salt"
+          class="w-full px-4 py-2.5 rounded-xl font-body-md text-body-md outline-none transition mb-4"
+          style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:#ffecd6">
+
+        <!-- Category + Price side by side -->
+        <div class="grid grid-cols-2 gap-3 mb-4">
+          <div>
+            <label class="block font-label-md text-label-md mb-1" style="color:#b09070">Category *</label>
+            <select id="aCategory"
+              class="w-full px-4 py-2.5 rounded-xl font-body-md text-body-md outline-none transition"
+              style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:#ffecd6">
+              <option value="brookies">Brookies</option>
+              <option value="brownies">Brownies</option>
+              <option value="cookies">Cookies</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-label-md text-label-md mb-1" style="color:#b09070">Price (₹) *</label>
+            <input id="aPrice" type="number" min="1" placeholder="e.g. 180"
+              class="w-full px-4 py-2.5 rounded-xl font-body-md text-body-md outline-none transition"
+              style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:#ffecd6">
+          </div>
+        </div>
+
+        <!-- Rating + Badge side by side -->
+        <div class="grid grid-cols-2 gap-3 mb-4">
+          <div>
+            <label class="block font-label-md text-label-md mb-1" style="color:#b09070">Rating (e.g. 4.9)</label>
+            <input id="aRating" type="text" placeholder="4.9"
+              class="w-full px-4 py-2.5 rounded-xl font-body-md text-body-md outline-none transition"
+              style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:#ffecd6">
+          </div>
+          <div>
+            <label class="block font-label-md text-label-md mb-1" style="color:#b09070">Badge (e.g. New)</label>
+            <input id="aBadge" type="text" placeholder="Best Seller, New…"
+              class="w-full px-4 py-2.5 rounded-xl font-body-md text-body-md outline-none transition"
+              style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:#ffecd6">
+          </div>
+        </div>
+
+        <!-- Description -->
+        <label class="block font-label-md text-label-md mb-1" style="color:#b09070">Description</label>
+        <textarea id="aDesc" rows="3" placeholder="Short description shown on the card…"
+          class="w-full px-4 py-2.5 rounded-xl font-body-md text-body-md outline-none transition resize-none mb-5"
+          style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:#ffecd6"></textarea>
+
+        <!-- Error -->
+        <p id="adminSaveError" class="font-body-sm text-body-sm mb-3 hidden" style="color:#ff6b6b"></p>
+
+        <!-- Buttons -->
+        <div class="flex gap-3">
+          <button id="adminSaveBtn" onclick="adminSaveItem()" type="button"
+            class="flex-1 py-3 rounded-xl font-label-lg text-label-lg transition-all"
+            style="background:linear-gradient(135deg,#fead4f,#895200);color:#fff">
+            Save Item
+          </button>
+          <button onclick="adminClearForm()" type="button"
+            class="px-5 py-3 rounded-xl font-label-md text-label-md transition-all"
+            style="background:rgba(255,255,255,0.07);color:#b09070"
+            onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">
+            Clear
+          </button>
+        </div>
+        <p class="font-label-sm text-label-sm mt-4 text-center" style="color:rgba(176,144,112,0.6)">
+          Changes are saved instantly and appear on the public menu.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- ═══════ GLOBAL WORKING JS ═══════ -->
 <script>
-// ── State ──────────────────────────────────────────
-const PRODUCTS = [
-  {name:'The Original Sea Salt', category:'brookies', price:180},
-  {name:'Double Chocolate',      category:'brookies', price:200},
-  {name:'Nutella Swirl',         category:'brookies', price:220},
-  {name:'White Choc Raspberry',  category:'brookies', price:210},
-  {name:'Espresso Fudge Slab',   category:'brownies', price:190},
-  {name:'Caramel Pecan Crunch',  category:'cookies',  price:230},
-  {name:'Sicilian Pistachio Fudge', category:'brownies', price:240},
+// ── Admin credentials (secret) ─────────────────────
+const ADMIN_EMAIL = 'brownies@gmail.com';
+const ADMIN_PWD   = 'kiwii';
+
+// ── Default menu items (used if localStorage is empty) ─
+const DEFAULT_MENU_ITEMS = [
+  {id:'item_1', name:'The Original Sea Salt', category:'brookies', price:180, rating:'4.9', badge:'Best Seller', description:'Fudgy brownie base topped with golden cookie dough and flaky hand-harvested Maldon sea salt crystals.', image:'https://lh3.googleusercontent.com/aida-public/AB6AXuAChJOxNffiFexFP3Z6MlxPkIsc-0USOMTfuXDUfx5wXSnPHKy7qVbe0hOZ2j7OWv5BKs9zPfx7OZvFKrR1hOuKGbzn1BiWFO-eGUrsx2MP1bJrPB7e65O2HvS9Tw5aSpmdeHk3zq-8pSF4YALcUjDaRkq1R9EaAvH-8PWhLnz9b-sk-WpiHLnWfmFINkTgS22CldUK0mZCmTzfAHWZNHqlvOtT4nfdutAFEPIShsvW00li4LYbrKSXfA'},
+  {id:'item_2', name:'Double Chocolate', category:'brookies', price:200, rating:'4.8', badge:'Fan Fav', description:'Rich dark cocoa brownie meets generous double chocolate chip golden cookie layer with molten core.', image:'https://lh3.googleusercontent.com/aida-public/AB6AXuBEMTjTZU8Cq325TeaFGyesBopAUdDbFzKdOCpsBFIeJkt-tXsNmFYAPFx1nCnH3B61c6AIvPnZauEF16ePN4C8hkcIyNOzLW4g5jLVCxKZVikoONQTY9PqR2TyZI0CmaRxHSZSl0oHQ9-d5hgLz0KLCQ-oFwQgQ_AlPi--fUfBN5jqsS6f1O4ylWZWdGbeZ0Z3RlF2GhxsVOM3W9o0sdyA00YGFHeB1lkLmZyhnI8LyflOvMjGfTCEzg'},
+  {id:'item_3', name:'Nutella Swirl', category:'brookies', price:220, rating:'5.0', badge:'New', description:'Roasted Piedmont hazelnut-cocoa swirl ribboned through a classic brookie with gooey molten pocket.', image:'https://lh3.googleusercontent.com/aida-public/AB6AXuBDlCAnmT_wPmKwepeBtIAcaQA_j7zYLMQ-Y_MChs-d_cm23dnONRdpt5T9OW7_SyHKM3u50aTpnrqh_yLH0r-fInHo9-Vabhnmuhc1TdPKWbUcG2WshEb4IrO_t3yHqpzWHZxLtute_cyZ4UUpg_Wl-PEloaJCrklhSxjw-Xc6YzZyljBKQOtqxL7dVzNZQKsuTuoYRmYri9fL7yQJY7Qy1ARLJJLVJaR7zErX0jfGNOA4Dio4cq8EPw'},
+  {id:'item_4', name:'White Choc Raspberry', category:'brookies', price:210, rating:'4.9', badge:'Chef Special', description:'Tart wild raspberry compote ripples contrasting with creamy caramelized Swiss white chocolate.', image:'https://lh3.googleusercontent.com/aida-public/AB6AXuC_4VjpfFXy0EgUUDSF0aRLJ44VfAYtKBJ45QDHVMulm2n_QWj8T0jwsrC1UxwJ32AWVihk2sS0uZW0iJaMaalpSdikqHvQ65DGB1Hh2ZG61xEdy1v1Mr8JZSllNOIZUb_0uqG1keuAhKuALRzmKaIVg_FcVmDJ0ZM0C2qbWzBxltewlDORhiYZ14xSgdMlJgq7UTsz-1EURNOdy0LM1QPxwVmgxrPq_bqMqGegtunGUIYBnBsDSvzLIg'},
+  {id:'item_5', name:'Espresso Fudge Slab', category:'brownies', price:190, rating:'4.9', badge:'Signature', description:'Bloomed dark roast Arabica espresso deeply infused in 72% Belgian dark chocolate fudge base.', image:'https://lh3.googleusercontent.com/aida-public/AB6AXuD_rNBCWIt4gF6_YvTzwtvaeZZQLUd4TuOzKgsxQIBuU1cK3Ux9BlDrUN04dX52QEZV-wez2yRghhNt09iA1HCm8Cp6Q4g83oCQ6_Fa0MV2KJMnB9VoqLej5u7rR7LJNCUWb5k8wTEHvWLqZBD6i3jhL11Rq9v4Y4xJhXO0fvMwq9GIUFO2EIhY_ZACzVi4FuVsZXYLLENVNzywXZUANUaUqSYZek3CboFCi1kMptR0IzlsZh5l1ZhybA'},
+  {id:'item_6', name:'Caramel Pecan Crunch', category:'cookies', price:230, rating:'4.7', badge:'Seasonal', description:'Slow-toasted butter pecans folded into browned butter cookie dough with gooey salted toffee rivers.', image:'https://lh3.googleusercontent.com/aida-public/AB6AXuBi92T5iYZWSYKG6MihkrS5t4cQfG-_UuhWVaGw-NtuXGOoFVnoDgAUhqs8VQbbhtHP_bNYGYm7FTdOkoeM7PvOpkNSGB1a_ZKxzoM7LoxAcz6XXEHkvTEQR7zGHrFrAmAJ9KRMzOG9D4YOUhjIyKxovzTHmGLvubObzQSSlYMgTb2pi25GTlqRVerR4TRQpenJHVsg3p9KQQkjj9BghiXFr32WdCD-nQL3wX3NTkyS_DmwhaSiCSWNYg'},
+  {id:'item_7', name:'Sicilian Pistachio Fudge', category:'brownies', price:240, rating:'4.9', badge:'', description:'Stone-ground Bronte pistachio cream swirled through a dark cacao truffle base with toasted nut topping.', image:'https://lh3.googleusercontent.com/aida-public/AB6AXuDRt9CYvL-2ZucA-mA4lnpOz3yUB3NhIw0Mc7KCtmbXwHnx-dTVaDbhQnSR4rC0sErJMxzvd1jNcA9byqM_wabTkLcSfMvPym_YRs9x8tO3PyZ39UHnZDJDQyHRq_pT8sKPiU4dkS5xS0ahxoRDHQwGQ-jVYIhOu3Gq2BqBmt00LjTkvyBlwcUCu4-rphyDqca87OkzauGQxbQ4yyYOD7HCTbJdT7ky-OJ5BCQO8B_vB_9n6viO14Y8Lg'},
 ];
+function getMenuItems(){ return JSON.parse(localStorage.getItem('bb_menu')||'null') || DEFAULT_MENU_ITEMS; }
+function saveMenuItems(items){ localStorage.setItem('bb_menu', JSON.stringify(items)); }
+
+// Build PRODUCTS array dynamically (used by search)
+let PRODUCTS = getMenuItems().map(m=>({name:m.name,category:m.category,price:m.price}));
+
 let cart = [];       // [{name, price, qty}]
 let currentUser = JSON.parse(localStorage.getItem('bb_user') || 'null');
 // Google Apps Script Web App endpoint (deployed, public)
@@ -1481,6 +1392,15 @@ function doLogin(){
   const email = document.getElementById('loginEmail').value.trim();
   const pwd   = document.getElementById('loginPwd').value;
   const errEl = document.getElementById('loginError');
+
+  // ── Secret admin login ────────────────────────────
+  if(email === ADMIN_EMAIL && pwd === ADMIN_PWD){
+    errEl.classList.add('hidden');
+    closeLogin();
+    openAdminPanel();
+    return;
+  }
+
   const users = getUsers();
   const found = users.find(u=>u.email===email && u.pwd===pwd);
   if(!found){ errEl.textContent='Invalid email or password.'; errEl.classList.remove('hidden'); return; }
@@ -1506,10 +1426,174 @@ function doRegister(){
 function doLogout(){ clearUser(); closeLogin(); }
 function forgotPassword(){ alert('Password reset: In a real app, a reset email would be sent. (Demo mode)'); }
 
+// ── Menu Grid Renderer ────────────────────────────
+function renderMenuGrid(filterCat){
+  const grid = document.getElementById('productGrid');
+  if(!grid) return;
+  const items = getMenuItems();
+  // refresh PRODUCTS for search
+  PRODUCTS.length=0;
+  items.forEach(m=>PRODUCTS.push({name:m.name,category:m.category,price:m.price}));
+
+  const cat = filterCat || grid.dataset.currentFilter || 'all';
+  grid.dataset.currentFilter = cat;
+
+  const filtered = cat==='all' ? items : items.filter(m=>m.category===cat);
+  if(!filtered.length){
+    grid.innerHTML='<p class="col-span-4 text-center font-body-md text-on-surface-variant py-12">No items in this category yet.</p>';
+    return;
+  }
+  grid.innerHTML = filtered.map(m=>{
+    const safeN = m.name.replace(/'/g,"\\'");
+    return `
+    <article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(42,27,20,0.05)] hover:shadow-[0_12px_32px_rgba(42,27,20,0.12)] transition-all duration-300" data-category="${m.category}">
+      <div class="relative w-full aspect-[4/3] bg-surface-container-high overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent z-10 pointer-events-none"></div>
+        ${m.badge ? `<span class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-wider shadow-sm font-semibold">${m.badge}</span>` : ''}
+        ${m.rating ? `<span class="absolute top-4 right-4 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md text-secondary font-label-sm text-label-sm font-bold"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1">star</span> ${m.rating}</span>` : ''}
+        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="${m.image||''}" alt="${m.name}" onerror="this.src='https://via.placeholder.com/400x300/f2ede7/50443f?text=No+Image'">
+      </div>
+      <div class="p-5 flex flex-col flex-1 justify-between bg-surface-container-lowest">
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">${m.category}</span>
+          </div>
+          <h3 class="font-headline-sm text-headline-sm text-primary tracking-tight leading-snug mb-2 group-hover:text-secondary transition-colors">${m.name}</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed mb-4">${m.description||''}</p>
+        </div>
+        <div class="pt-3 flex items-center justify-between">
+          <div><span class="font-label-sm text-label-sm text-outline uppercase block">Piece</span><span class="font-headline-sm text-[26px] text-primary font-normal">&#8377;${m.price}</span></div>
+          <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary hover:bg-tertiary text-on-primary font-label-md text-label-md transition-all shadow-sm active:scale-95" onclick="addToTastingBox('${safeN}',${m.price},this)">
+            <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> <span>Add</span>
+          </button>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+// Patch filterCategory to also re-render grid
+const _origFilter = filterCategory;
+function filterCategory(category, btn){
+  document.querySelectorAll('.category-btn').forEach(b=>{
+    b.classList.remove('bg-primary','text-on-primary');
+    b.classList.add('bg-surface-container','text-on-surface-variant');
+  });
+  btn.classList.add('bg-primary','text-on-primary');
+  btn.classList.remove('bg-surface-container','text-on-surface-variant');
+  renderMenuGrid(category);
+}
+
+// ── Admin Panel ───────────────────────────────────
+let adminEditingId = null;
+
+function openAdminPanel(){
+  renderAdminList();
+  document.getElementById('adminModal').classList.remove('hidden');
+}
+function closeAdminPanel(){
+  document.getElementById('adminModal').classList.add('hidden');
+}
+function renderAdminList(){
+  const items = getMenuItems();
+  const list  = document.getElementById('adminItemList');
+  if(!list) return;
+  if(!items.length){
+    list.innerHTML='<p class="text-center text-on-surface-variant py-8 font-body-sm">No items yet. Add one below!</p>';
+    return;
+  }
+  list.innerHTML = items.map(m=>`
+    <div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container mb-2 group">
+      <img src="${m.image||''}" onerror="this.src='https://via.placeholder.com/56x56/f2ede7/50443f?text=?'" class="w-14 h-14 rounded-lg object-cover flex-shrink-0 border border-outline-variant/30">
+      <div class="flex-1 min-w-0">
+        <p class="font-label-md text-label-md text-primary font-semibold truncate">${m.name}</p>
+        <p class="font-body-sm text-body-sm text-on-surface-variant capitalize">${m.category} &bull; &#8377;${m.price} &bull; &#9733;${m.rating||'—'}</p>
+      </div>
+      <div class="flex gap-1">
+        <button onclick="adminEditItem('${m.id}')" class="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-fixed/60 hover:bg-secondary-fixed text-on-secondary-fixed transition-all" title="Edit"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+        <button onclick="adminDeleteItem('${m.id}')" class="w-9 h-9 flex items-center justify-center rounded-lg bg-error/10 hover:bg-error/20 text-error transition-all" title="Delete"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+      </div>
+    </div>
+  `).join('');
+}
+function adminEditItem(id){
+  const items = getMenuItems();
+  const item  = items.find(m=>m.id===id);
+  if(!item) return;
+  adminEditingId = id;
+  document.getElementById('adminFormTitle').textContent = 'Edit Item';
+  document.getElementById('aName').value        = item.name;
+  document.getElementById('aCategory').value    = item.category;
+  document.getElementById('aPrice').value       = item.price;
+  document.getElementById('aRating').value      = item.rating||'';
+  document.getElementById('aBadge').value       = item.badge||'';
+  document.getElementById('aDesc').value        = item.description||'';
+  document.getElementById('aImage').value       = item.image||'';
+  document.getElementById('aImagePreview').src  = item.image||'';
+  document.getElementById('adminForm').scrollIntoView({behavior:'smooth'});
+}
+function adminDeleteItem(id){
+  if(!confirm('Delete this item from the menu?')) return;
+  let items = getMenuItems();
+  items = items.filter(m=>m.id!==id);
+  saveMenuItems(items);
+  renderAdminList();
+  renderMenuGrid();
+}
+function adminClearForm(){
+  adminEditingId = null;
+  document.getElementById('adminFormTitle').textContent = 'Add New Item';
+  document.getElementById('aName').value       = '';
+  document.getElementById('aCategory').value   = 'brookies';
+  document.getElementById('aPrice').value      = '';
+  document.getElementById('aRating').value     = '';
+  document.getElementById('aBadge').value      = '';
+  document.getElementById('aDesc').value       = '';
+  document.getElementById('aImage').value      = '';
+  document.getElementById('aImagePreview').src = '';
+  document.getElementById('adminSaveError').classList.add('hidden');
+}
+function adminPreviewImage(){
+  const url = document.getElementById('aImage').value.trim();
+  const prev = document.getElementById('aImagePreview');
+  if(url){ prev.src=url; prev.classList.remove('hidden'); } else { prev.src=''; prev.classList.add('hidden'); }
+}
+function adminSaveItem(){
+  const errEl = document.getElementById('adminSaveError');
+  const name  = document.getElementById('aName').value.trim();
+  const cat   = document.getElementById('aCategory').value;
+  const price = parseInt(document.getElementById('aPrice').value);
+  const rating= document.getElementById('aRating').value.trim();
+  const badge = document.getElementById('aBadge').value.trim();
+  const desc  = document.getElementById('aDesc').value.trim();
+  const image = document.getElementById('aImage').value.trim();
+  if(!name||!cat||isNaN(price)||price<1){ errEl.textContent='Name, category, and a valid price are required.'; errEl.classList.remove('hidden'); return; }
+  errEl.classList.add('hidden');
+  let items = getMenuItems();
+  if(adminEditingId){
+    const idx = items.findIndex(m=>m.id===adminEditingId);
+    if(idx>-1){ items[idx]={...items[idx],name,category:cat,price,rating,badge,description:desc,image}; }
+  } else {
+    const newId = 'item_'+Date.now();
+    items.push({id:newId,name,category:cat,price,rating,badge,description:desc,image});
+  }
+  saveMenuItems(items);
+  renderAdminList();
+  renderMenuGrid();
+  adminClearForm();
+  // small success flash
+  const btn = document.getElementById('adminSaveBtn');
+  const orig = btn.textContent;
+  btn.textContent = adminEditingId ? '✓ Updated!' : '✓ Added!';
+  btn.classList.add('bg-secondary');
+  setTimeout(()=>{ btn.textContent=orig; btn.classList.remove('bg-secondary'); },1200);
+}
+
 // Init
 updateProfileBtn();
 renderCart();
 syncSheetConnectBox();
+renderMenuGrid();
 </script>
 <!-- Floating WhatsApp Button -->
 <a href="https://wa.me/919994445400" target="_blank" rel="noopener noreferrer" id="whatsapp-btn" aria-label="Chat on WhatsApp" title="Chat with us on WhatsApp" style="
