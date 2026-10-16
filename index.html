@@ -1001,15 +1001,46 @@ animate();
       <div id="adminForm" class="rounded-2xl p-6" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
         <p id="adminFormTitle" class="font-headline-sm text-[18px] font-semibold mb-5" style="color:#ffecd6">Add New Item</p>
 
-        <!-- Image URL + Preview -->
-        <label class="block font-label-md text-label-md mb-1" style="color:#b09070">Image URL</label>
-        <div class="flex gap-2 mb-3">
+        <!-- Image: URL or Upload -->
+        <label class="block font-label-md text-label-md mb-2" style="color:#b09070">Item Image</label>
+
+        <!-- Tab switcher -->
+        <div class="flex gap-1 mb-3 p-1 rounded-xl" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08)">
+          <button id="imgTabUrl" type="button" onclick="adminImgTab('url')"
+            class="flex-1 py-1.5 rounded-lg font-label-md text-label-md transition-all"
+            style="background:rgba(254,173,79,0.25);color:#fead4f">
+            <span class="material-symbols-outlined text-[15px] align-middle mr-1">link</span>Paste URL
+          </button>
+          <button id="imgTabFile" type="button" onclick="adminImgTab('file')"
+            class="flex-1 py-1.5 rounded-lg font-label-md text-label-md transition-all"
+            style="background:transparent;color:#b09070">
+            <span class="material-symbols-outlined text-[15px] align-middle mr-1">upload</span>Upload from Device
+          </button>
+        </div>
+
+        <!-- URL input pane -->
+        <div id="imgPaneUrl" class="mb-3">
           <input id="aImage" type="url" placeholder="https://…" oninput="adminPreviewImage()"
-            class="flex-1 px-4 py-2.5 rounded-xl font-body-md text-body-md outline-none transition"
+            class="w-full px-4 py-2.5 rounded-xl font-body-md text-body-md outline-none transition"
             style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:#ffecd6">
         </div>
+
+        <!-- File upload pane (hidden by default) -->
+        <div id="imgPaneFile" class="mb-3" style="display:none">
+          <input id="aImageFile" type="file" accept="image/*" onchange="adminHandleFileUpload(this)" style="display:none">
+          <button type="button" onclick="document.getElementById('aImageFile').click()"
+            class="w-full py-2.5 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 transition-all"
+            style="background:rgba(255,255,255,0.07);border:2px dashed rgba(254,173,79,0.4);color:#fead4f"
+            onmouseover="this.style.borderColor='rgba(254,173,79,0.8)'" onmouseout="this.style.borderColor='rgba(254,173,79,0.4)'">
+            <span class="material-symbols-outlined text-[20px]">photo_library</span>
+            Choose photo from device
+          </button>
+          <p id="aImageFileName" class="mt-1.5 font-body-sm text-body-sm text-center" style="color:rgba(176,144,112,0.7)">No file selected</p>
+        </div>
+
+        <!-- Shared preview -->
         <div class="mb-4 rounded-xl overflow-hidden" style="max-height:180px">
-          <img id="aImagePreview" src="" alt="Preview" class="w-full object-cover" style="display:block;max-height:180px" onerror="this.style.display='none'" onload="this.style.display='block'">
+          <img id="aImagePreview" src="" alt="Preview" class="w-full object-cover" style="display:none;max-height:180px" onerror="this.style.display='none'" onload="this.style.display='block'">
         </div>
 
         <!-- Name -->
@@ -1530,6 +1561,9 @@ function adminEditItem(id){
   document.getElementById('aDesc').value        = item.description||'';
   document.getElementById('aImage').value       = item.image||'';
   document.getElementById('aImagePreview').src  = item.image||'';
+  document.getElementById('aImageFile').value   = '';
+  document.getElementById('aImageFileName').textContent = 'No file selected';
+  adminImgTab('url');
   document.getElementById('adminForm').scrollIntoView({behavior:'smooth'});
 }
 function adminDeleteItem(id){
@@ -1551,12 +1585,46 @@ function adminClearForm(){
   document.getElementById('aDesc').value       = '';
   document.getElementById('aImage').value      = '';
   document.getElementById('aImagePreview').src = '';
+  document.getElementById('aImagePreview').style.display = 'none';
+  document.getElementById('aImageFile').value  = '';
+  document.getElementById('aImageFileName').textContent = 'No file selected';
+  adminImgTab('url');
   document.getElementById('adminSaveError').classList.add('hidden');
+}
+function adminImgTab(tab){
+  const urlPane  = document.getElementById('imgPaneUrl');
+  const filePane = document.getElementById('imgPaneFile');
+  const tabUrl   = document.getElementById('imgTabUrl');
+  const tabFile  = document.getElementById('imgTabFile');
+  if(tab==='url'){
+    urlPane.style.display='block'; filePane.style.display='none';
+    tabUrl.style.background='rgba(254,173,79,0.25)'; tabUrl.style.color='#fead4f';
+    tabFile.style.background='transparent'; tabFile.style.color='#b09070';
+  } else {
+    urlPane.style.display='none'; filePane.style.display='block';
+    tabFile.style.background='rgba(254,173,79,0.25)'; tabFile.style.color='#fead4f';
+    tabUrl.style.background='transparent'; tabUrl.style.color='#b09070';
+  }
+}
+function adminHandleFileUpload(input){
+  const file = input.files[0];
+  if(!file) return;
+  const label = document.getElementById('aImageFileName');
+  label.textContent = file.name;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    const dataUrl = e.target.result;
+    document.getElementById('aImage').value = dataUrl;
+    const prev = document.getElementById('aImagePreview');
+    prev.src = dataUrl;
+    prev.style.display = 'block';
+  };
+  reader.readAsDataURL(file);
 }
 function adminPreviewImage(){
   const url = document.getElementById('aImage').value.trim();
   const prev = document.getElementById('aImagePreview');
-  if(url){ prev.src=url; prev.classList.remove('hidden'); } else { prev.src=''; prev.classList.add('hidden'); }
+  if(url){ prev.src=url; prev.style.display='block'; } else { prev.src=''; prev.style.display='none'; }
 }
 function adminSaveItem(){
   const errEl = document.getElementById('adminSaveError');
